@@ -13,7 +13,7 @@ class Counter {
         std::mutex* mutex_;
         Counter() {
             counter_ = 0;
-            mutex_ = new std::mutex();
+            mutex_ = new std::mutex(); 
         }
         ~Counter() {
             delete mutex_;
@@ -26,7 +26,7 @@ void increment_counter_fn(Counter* counter) {
         counter->mutex_->lock();
         // Since multiple threads are trying to perform an increment, the
         // increment needs to be protected by a mutex.
-        counter->counter_++;
+        counter->counter_++; 
         // Call unlock() method to release lock.
         counter->mutex_->unlock();
     }
